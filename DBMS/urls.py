@@ -2,6 +2,9 @@ from django.conf.urls import url
 from django.contrib import admin
 from etv import views as v1
 from tornado import views as v2
+from django.urls import path
+
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -10,6 +13,7 @@ urlpatterns = [
     url(r'^tsunami/', v1.tsunami, name='tsunami'),
     url(r'^volcano/', v1.volcano, name='volcano'),
     url(r'^tornado/', v2.tornado, name='tornado'),
+    url(r'', v1.index, name='home')
 ]
 
 admin.site.site_url = '/home'
